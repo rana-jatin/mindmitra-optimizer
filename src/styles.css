@@ -64,24 +64,29 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.22 0.03 180);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.22 0.03 180);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.22 0.03 180);
+  --primary: oklch(0.55 0.09 180);
+  --primary-foreground: oklch(0.99 0.01 180);
+  --primary-glow: oklch(0.72 0.11 175);
+  --secondary: oklch(0.96 0.02 175);
+  --secondary-foreground: oklch(0.32 0.05 180);
+  --muted: oklch(0.97 0.012 170);
+  --muted-foreground: oklch(0.5 0.03 190);
+  --accent: oklch(0.93 0.05 165);
+  --accent-foreground: oklch(0.3 0.06 180);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.91 0.02 180);
+  --input: oklch(0.92 0.02 180);
+  --ring: oklch(0.55 0.09 180);
+  --gradient-hero: linear-gradient(135deg, oklch(0.55 0.09 180), oklch(0.72 0.11 175));
+  --gradient-soft: linear-gradient(180deg, oklch(0.98 0.01 175), oklch(0.95 0.03 165));
+  --shadow-soft: 0 8px 30px -12px oklch(0.55 0.09 180 / 0.18);
+  --shadow-card: 0 2px 12px -4px oklch(0.4 0.05 180 / 0.08);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +145,30 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  @keyframes tb-fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tb-fade-up {
+    animation: tb-fade-up 0.6s ease-out both;
+  }
+
+  .tb-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .tb-gradient-soft {
+    background-image: var(--gradient-soft);
+  }
+
+  .tb-shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .tb-shadow-card {
+    box-shadow: var(--shadow-card);
   }
 }
