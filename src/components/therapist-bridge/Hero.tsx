@@ -30,12 +30,12 @@ export function Hero({ onProfile, onFind }: { onProfile: () => void; onFind: () 
           </div>
         </div>
         <div className="relative hidden md:block">
-          <div className="absolute -inset-6 rounded-[2rem] tb-gradient-hero opacity-20 blur-2xl" aria-hidden />
+          <div className="absolute -inset-10 rounded-full tb-gradient-hero blur-3xl tb-breathe" aria-hidden />
           <img
-            src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=900&q=75"
-            alt="Sunlight through tree canopy — a quiet, grounding moment"
+            src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=900&q=75"
+            alt="A still, sunlit forest path"
             loading="eager"
-            className="relative h-[420px] w-full rounded-[2rem] object-cover tb-shadow-soft"
+            className="relative h-[420px] w-full rounded-[2.5rem] object-cover tb-shadow-soft tb-float"
           />
         </div>
       </div>
