@@ -101,8 +101,8 @@ function TherapistBridgePage() {
     (t: Therapist) => {
       setPendingTherapist(t);
       if (!minimumConsent(consent)) {
-        toast("Consent needed", {
-          description: "Enable assessments and contact info to book.",
+        toast("One small step first", {
+          description: "Let your therapist see a snapshot and how to reach you, and we're set.",
         });
         scrollTo(consentRef);
         return;
