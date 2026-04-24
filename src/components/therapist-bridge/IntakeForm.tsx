@@ -31,14 +31,14 @@ export function IntakeForm({ onApply }: { onApply: (prefs: IntakePrefs) => void 
   return (
     <Card className="rounded-2xl border-border/60 tb-shadow-card">
       <CardHeader>
-        <CardTitle className="text-lg">Tell us what you're looking for</CardTitle>
+        <CardTitle className="text-lg">What would feel supportive?</CardTitle>
         <p className="text-sm text-muted-foreground">
-          We'll narrow the directory below. Nothing here is shared without consent.
+          We'll gently shape the suggestions below. Nothing you choose here is shared with anyone.
         </p>
       </CardHeader>
       <CardContent className="space-y-6">
         <div>
-          <Label className="mb-3 block">Concerns</Label>
+          <Label className="mb-3 block">What's on your mind</Label>
           <div className="flex flex-wrap gap-2">
             {concernOptions.map((c) => {
               const active = prefs.concerns.includes(c);
@@ -62,7 +62,7 @@ export function IntakeForm({ onApply }: { onApply: (prefs: IntakePrefs) => void 
 
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
-            <Label className="mb-2 block">Modality</Label>
+            <Label className="mb-2 block">How you'd like to meet</Label>
             <Select
               value={prefs.modality}
               onValueChange={(v) => setPrefs((p) => ({ ...p, modality: v as IntakePrefs["modality"] }))}
@@ -91,7 +91,7 @@ export function IntakeForm({ onApply }: { onApply: (prefs: IntakePrefs) => void 
             </Select>
           </div>
           <div>
-            <Label className="mb-2 block">Therapist gender</Label>
+            <Label className="mb-2 block">Therapist you'd feel at ease with</Label>
             <Select
               value={prefs.gender}
               onValueChange={(v) => setPrefs((p) => ({ ...p, gender: v as IntakePrefs["gender"] }))}
@@ -109,7 +109,7 @@ export function IntakeForm({ onApply }: { onApply: (prefs: IntakePrefs) => void 
 
         <div>
           <div className="mb-2 flex items-center justify-between">
-            <Label>Budget per session</Label>
+            <Label>What feels comfortable per session</Label>
             <span className="text-sm font-medium text-foreground">₹{prefs.budget}</span>
           </div>
           <Slider
@@ -132,10 +132,10 @@ export function IntakeForm({ onApply }: { onApply: (prefs: IntakePrefs) => void 
           <Button
             onClick={() => {
               onApply(prefs);
-              toast.success("Filters applied", { description: "Directory updated below." });
+              toast.success("Updated gently", { description: "Take a look at the people below." });
             }}
           >
-            Apply &amp; match
+            Show me people who fit
           </Button>
         </div>
       </CardContent>

@@ -10,12 +10,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "MindMitra bridges your daily emotional check-ins to the right therapist, with consent-first sharing.",
+          "A gentle space for daily reflection — and a quiet bridge to a therapist when you're ready.",
       },
       { property: "og:title", content: "MindMitra — Care that meets you" },
       {
         property: "og:description",
-        content: "From self-reflection to the right clinician — in minutes.",
+        content: "From quiet daily reflections to a therapist who feels right — at your pace.",
       },
     ],
   }),
@@ -37,13 +37,13 @@ function Index() {
             <span className="bg-clip-text text-transparent tb-gradient-hero">meets you</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-            From your quiet daily check-ins to the right clinician — a consent-first bridge to
-            therapy that actually fits.
+            A soft place to land between your daily reflections and a therapist who feels right.
+            You decide what to share, and when.
           </p>
           <div className="mt-8">
             <Button asChild size="lg" className="tb-shadow-soft">
               <Link to="/therapist-bridge">
-                Open Therapist Bridge
+                Begin gently
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>

@@ -5,10 +5,10 @@ import { ShieldCheck } from "lucide-react";
 import type { ConsentState } from "@/lib/mock/therapist-bridge";
 
 const items: { key: keyof ConsentState; label: string; desc: string }[] = [
-  { key: "assessments", label: "Share assessments", desc: "PHQ-9, GAD-7 scores and severity." },
-  { key: "fullProfile", label: "Share full emotional profile", desc: "Mood trends, patterns, topics." },
-  { key: "sessionSummaries", label: "Share session summaries", desc: "AI-generated reflection notes." },
-  { key: "contactInfo", label: "Share contact information", desc: "Name and email — required to book." },
+  { key: "assessments", label: "Share assessments", desc: "A simple snapshot of how you've been feeling lately." },
+  { key: "fullProfile", label: "Share full emotional profile", desc: "The bigger picture — your moods, themes, and gentle patterns." },
+  { key: "sessionSummaries", label: "Share session summaries", desc: "Soft notes from your reflections, in your own rhythm." },
+  { key: "contactInfo", label: "Share contact information", desc: "Just your name and email, so they can reach out." },
 ];
 
 export function ConsentForm({
@@ -23,10 +23,10 @@ export function ConsentForm({
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg">
           <ShieldCheck className="h-5 w-5 text-primary" />
-          Consent — what you share
+          What you'd like to share
         </CardTitle>
         <p className="text-sm text-muted-foreground">
-          You stay in control. Toggle exactly what your therapist receives.
+          Take your time. Share only what feels right — you can change your mind anytime.
         </p>
       </CardHeader>
       <CardContent className="space-y-4">

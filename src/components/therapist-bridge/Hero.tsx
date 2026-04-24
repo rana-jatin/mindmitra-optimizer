@@ -9,23 +9,23 @@ export function Hero({ onProfile, onFind }: { onProfile: () => void; onFind: () 
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            MindMitra · Therapist Bridge
+            MindMitra · A gentle bridge
           </div>
           <h1 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
-            Bridge to the right{" "}
-            <span className="bg-clip-text text-transparent tb-gradient-hero">therapist</span>
+            Find someone who{" "}
+            <span className="bg-clip-text text-transparent tb-gradient-hero">truly listens</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-            A calm, consent-first handoff from your daily check-ins to a clinician who fits.
-            Share only what you choose. Match in minutes.
+            When you're ready, we'll help you meet a therapist who feels like a good fit.
+            You stay in control of what's shared — nothing leaves your hands without you.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button size="lg" onClick={onProfile} className="tb-shadow-soft">
-              See my emotional profile
+              See how you've been feeling
               <ArrowDown className="ml-1 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" onClick={onFind}>
-              Find a therapist
+              Meet someone who fits
             </Button>
           </div>
         </div>
