@@ -71,6 +71,7 @@ export const mockTherapists: Therapist[] = [
     nextAvailable: "Tomorrow, 4:00 PM",
     bio: "Evidence-based care for high-achievers navigating burnout and anxiety.",
     avatarHue: 175,
+    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=70",
   },
   {
     id: "t2",
@@ -86,6 +87,7 @@ export const mockTherapists: Therapist[] = [
     nextAvailable: "Thu, 11:00 AM",
     bio: "Warm, structured approach to relational and life-transition work.",
     avatarHue: 195,
+    photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=70",
   },
   {
     id: "t3",
@@ -101,6 +103,7 @@ export const mockTherapists: Therapist[] = [
     nextAvailable: "Today, 7:30 PM",
     bio: "Integrative practice blending CBT with somatic and mindfulness tools.",
     avatarHue: 160,
+    photo: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=70",
   },
   {
     id: "t4",
@@ -116,6 +119,7 @@ export const mockTherapists: Therapist[] = [
     nextAvailable: "Mon, 2:00 PM",
     bio: "Specialist in trauma-focused therapy with a body-aware lens.",
     avatarHue: 210,
+    photo: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=400&q=70",
   },
   {
     id: "t5",
@@ -131,6 +135,7 @@ export const mockTherapists: Therapist[] = [
     nextAvailable: "Fri, 10:00 AM",
     bio: "Combined psychotherapy and medication management when indicated.",
     avatarHue: 145,
+    photo: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=400&q=70",
   },
   {
     id: "t6",
@@ -146,6 +151,7 @@ export const mockTherapists: Therapist[] = [
     nextAvailable: "Wed, 6:00 PM",
     bio: "Affirming, identity-aware care for everyday and complex challenges.",
     avatarHue: 185,
+    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=70",
   },
 ];
 

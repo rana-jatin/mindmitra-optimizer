@@ -23,15 +23,16 @@ export function TherapistCard({
     <Card className="group flex h-full flex-col rounded-2xl border-border/60 tb-shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lg">
       <CardContent className="flex h-full flex-col p-5">
         <div className="flex items-start gap-3">
-          <div
-            className="grid h-12 w-12 shrink-0 place-content-center rounded-full text-sm font-semibold text-primary-foreground"
-            style={{
-              background: `linear-gradient(135deg, oklch(0.6 0.1 ${therapist.avatarHue}), oklch(0.75 0.11 ${therapist.avatarHue + 15}))`,
+          <img
+            src={therapist.photo}
+            alt={`Portrait of ${therapist.name}`}
+            loading="lazy"
+            className="h-12 w-12 shrink-0 rounded-full object-cover ring-2 ring-accent/60"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.display = "none";
             }}
-            aria-hidden
-          >
-            {initials}
-          </div>
+          />
+          <span className="sr-only">{initials}</span>
           <div className="min-w-0 flex-1">
             <h3 className="truncate text-base font-semibold text-foreground">{therapist.name}</h3>
             <p className="truncate text-xs text-muted-foreground">{therapist.credentials}</p>
