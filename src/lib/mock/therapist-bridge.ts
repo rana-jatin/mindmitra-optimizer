@@ -14,6 +14,7 @@ export type Therapist = {
   nextAvailable: string;
   bio: string;
   avatarHue: number;
+  photo: string;
 };
 
 export type EmotionalProfile = {
