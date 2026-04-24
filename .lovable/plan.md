@@ -1,66 +1,73 @@
 
-# TherapistBridge — Visual/UX Redesign (Mock Data)
+# Soften Microcopy — Hero, Consent & Form Sections
 
-A polished, performant recreation of the MindMitra TherapistBridge page using mock data — no backend, no auth. Built natively for this TanStack Start project.
+Goal: replace clinical/transactional phrasing with warmer, more reassuring language. Visuals, layout, components, and behavior stay exactly the same — text only.
 
-## Route
-- New route: `/therapist-bridge` (`src/routes/therapist-bridge.tsx`) with its own SEO meta (title, description, og tags).
-- Update `src/routes/index.tsx` (currently placeholder) into a simple landing page that links to `/therapist-bridge`.
+## 1. Landing Hero — `src/routes/index.tsx`
 
-## Page Sections (top → bottom)
-1. **Hero** — headline "Bridge to the right therapist", supporting copy, two CTAs ("See my emotional profile" / "Find a therapist") that smooth-scroll to sections below.
-2. **Emotional Profile card** — mock data: mood chart (7-day trend), top patterns, topic cloud, assessment scores (PHQ-9, GAD-7) with severity badges.
-3. **Clinical Sync & Export bar** — "Sync device" + "Export PDF" buttons (UI only, toast feedback).
-4. **Intake Form** — preferences: concerns (multi-select chips), modality (in-person/virtual), language, gender preference, budget slider, availability. Apply button filters the directory.
-5. **Therapist Directory** — responsive card grid with photo, name, credentials, specialties, modality, rating, price/session, "Book" button. Filters from intake apply live.
-6. **Consent Form** — toggles: share assessments, share full profile, share session summaries, share contact info. Required before booking.
-7. **Process Timeline** — 4-step visual: Intake → Match → Consent → Book.
-8. **Handoff Explainer** — short 3-card explainer of what the therapist receives.
-9. **Dashboard Preview / Data Preview Modal** — opens from a "Preview what the therapist sees" button, shows exact shared data based on consent toggles.
+| Element | Current | Proposed |
+|---|---|---|
+| Meta title | "MindMitra — Care that meets you" | _(unchanged — already warm)_ |
+| Meta description | "MindMitra bridges your daily emotional check-ins to the right therapist, with consent-first sharing." | "A gentle space for daily reflection — and a quiet bridge to a therapist when you're ready." |
+| OG description | "From self-reflection to the right clinician — in minutes." | "From quiet daily reflections to a therapist who feels right — at your pace." |
+| Sub-headline | "From your quiet daily check-ins to the right clinician — a consent-first bridge to therapy that actually fits." | "A soft place to land between your daily reflections and a therapist who feels right. You decide what to share, and when." |
+| CTA button | "Open Therapist Bridge" | "Begin gently" |
 
-## Booking Flow
-- Click **Book** on a therapist → if consent insufficient, open Consent modal; otherwise open a Booking confirmation modal showing summary + success toast.
+## 2. Therapist Bridge Hero — `src/components/therapist-bridge/Hero.tsx`
 
-## Visual Design
-- Calm, clinical wellness aesthetic: soft neutrals, sage/teal accent, generous spacing, rounded-2xl cards, subtle shadows.
-- Typography hierarchy with clear section headers and supporting muted copy.
-- Light/dark mode via existing tokens; new accent tokens added to `src/styles.css`.
-- Subtle entrance animations (fade/slide-up on scroll) using CSS only — no heavy libraries.
-- Fully responsive: single column mobile, 2-col tablet, 3-col desktop for therapist grid.
-- Accessible: proper labels, focus rings, keyboard nav for modals/toggles, semantic landmarks.
+| Element | Current | Proposed |
+|---|---|---|
+| Eyebrow chip | "MindMitra · Therapist Bridge" | "MindMitra · A gentle bridge" |
+| Headline | "Bridge to the right **therapist**" | "Find someone who **truly listens**" |
+| Sub-copy | "A calm, consent-first handoff from your daily check-ins to a clinician who fits. Share only what you choose. Match in minutes." | "When you're ready, we'll help you meet a therapist who feels like a good fit. You stay in control of what's shared — nothing leaves your hands without you." |
+| Primary CTA | "See my emotional profile" | "See how you've been feeling" |
+| Secondary CTA | "Find a therapist" | "Meet someone who fits" |
 
-## Performance Optimisations
-- Code-split heavy sections (Directory, Data Preview Modal) via `React.lazy` + `Suspense` skeletons.
-- Memoise filtered therapist list with `useMemo`; stable callbacks with `useCallback`.
-- Mock data lives in `src/lib/mock/therapist-bridge.ts` — imported once, no re-fetching.
-- Skeleton loaders for the initial paint of profile + directory (simulated brief delay for realism, removable).
-- Images: use lightweight SVG avatars / `loading="lazy"` for any photos.
-- No external icon/animation libs beyond `lucide-react` (already present).
-- Smooth-scroll via `scrollIntoView` (no router churn).
+## 3. Section Headers — `src/routes/therapist-bridge.tsx`
 
-## File Structure
-```
-src/routes/therapist-bridge.tsx         (route + page composition)
-src/components/therapist-bridge/
-  Hero.tsx
-  EmotionalProfile.tsx
-  MoodChart.tsx                         (lightweight inline SVG chart)
-  PatternsCard.tsx
-  TopicCloud.tsx
-  AssessmentScores.tsx
-  ClinicalActions.tsx
-  IntakeForm.tsx
-  TherapistDirectory.tsx
-  TherapistCard.tsx
-  ConsentForm.tsx
-  ProcessTimeline.tsx
-  HandoffExplainer.tsx
-  DataPreviewModal.tsx
-  BookingModal.tsx
-src/lib/mock/therapist-bridge.ts        (therapists, profile, types)
-```
+Soften the eyebrow + title pairs (drop "Step 1/2/3" clinical labeling):
+
+| Section | Current eyebrow / title | Proposed |
+|---|---|---|
+| Profile | "Your signal" / "Emotional profile" | "How you've been" / "A gentle look at your week" |
+| Intake | "Step 1" / "Intake preferences" | "Tell us a little" / "What feels right for you" |
+| Directory | "Step 2" / "Matched therapists" | "People who could help" / "Therapists who might fit" |
+| Consent | "Step 3" / "Your consent" | "You're in control" / "What you'd like to share" |
+| Process | "The flow" / "From signal to session" | "How it unfolds" / "From a quiet check-in to a first session" |
+| Handoff | "Transparency" / "What gets handed off" | "Nothing hidden" / "What your therapist will see" |
+| Footer | "MindMitra · Therapist Bridge demo. All data shown is illustrative." | "MindMitra · A gentle preview. Everything shown here is for illustration." |
+
+## 4. Consent Form — `src/components/therapist-bridge/ConsentForm.tsx`
+
+| Element | Current | Proposed |
+|---|---|---|
+| Card title | "Consent — what you share" | "What you'd like to share" |
+| Card sub-copy | "You stay in control. Toggle exactly what your therapist receives." | "Take your time. Share only what feels right — you can change your mind anytime." |
+| "Share assessments" desc | "PHQ-9, GAD-7 scores and severity." | "A simple snapshot of how you've been feeling lately." |
+| "Share full emotional profile" desc | "Mood trends, patterns, topics." | "The bigger picture — your moods, themes, and gentle patterns." |
+| "Share session summaries" desc | "AI-generated reflection notes." | "Soft notes from your reflections, in your own rhythm." |
+| "Share contact information" desc | "Name and email — required to book." | "Just your name and email, so they can reach out." |
+
+## 5. Intake Form — `src/components/therapist-bridge/IntakeForm.tsx`
+
+| Element | Current | Proposed |
+|---|---|---|
+| Card title | "Tell us what you're looking for" | "What would feel supportive?" |
+| Card sub-copy | "We'll narrow the directory below. Nothing here is shared without consent." | "We'll gently shape the suggestions below. Nothing you choose here is shared with anyone." |
+| "Concerns" label | "Concerns" | "What's on your mind" |
+| "Modality" label | "Modality" | "How you'd like to meet" |
+| "Therapist gender" label | "Therapist gender" | "Therapist you'd feel at ease with" |
+| "Budget per session" label | "Budget per session" | "What feels comfortable per session" |
+| Apply button | "Apply & match" | "Show me people who fit" |
+| Toast title / desc | "Filters applied" / "Directory updated below." | "Updated gently" / "Take a look at the people below." |
+
+## 6. Booking Consent Toast — `src/routes/therapist-bridge.tsx`
+
+| Element | Current | Proposed |
+|---|---|---|
+| Toast title | "Consent needed" | "One small step first" |
+| Toast desc | "Enable assessments and contact info to book." | "Let your therapist see a snapshot and how to reach you, and we're set." |
 
 ## Out of Scope
-- Real authentication, database, or referral persistence.
-- Real PDF export (button shows a toast).
-- Real device sync.
+- No layout, color, image, animation, or component-structure changes.
+- No changes to the Therapist Directory cards, Process Timeline, Handoff Explainer, Booking Modal, or Data Preview Modal copy (let me know if you'd like those softened too in a follow-up).
